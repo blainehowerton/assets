@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206045913) do
+ActiveRecord::Schema.define(version: 20161206051459) do
 
   create_table "equipment", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.date     "in_service_date"
     t.string   "serial"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.decimal  "amount",          precision: 5, scale: 2
   end
 
 end
