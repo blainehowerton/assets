@@ -35,7 +35,6 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Description</th>
             <th>In service date</th>
             <th>Serial</th>
             <th>Amount</th>
@@ -47,7 +46,6 @@
           <% @equipment.each do |equipment| %>
             <tr>
               <td><%= equipment.name %></td>
-              <td><%= equipment.description %></td>
               <td><%= equipment.in_service_date %></td>
               <td><%= equipment.serial %></td>
               <td><%= number_to_currency(equipment.amount) %></td>
