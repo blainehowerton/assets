@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20161206051459) do
     t.text     "description"
     t.date     "in_service_date"
     t.string   "serial"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
-    t.decimal  "amount",          precision: 5, scale: 2
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
+    t.decimal  "amount",          precision: 10, scale: 2, default: "0.0", null: false
   end
 
 end
