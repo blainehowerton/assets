@@ -25,5 +25,13 @@
   <%= @equipment.amount %>
 </p>
 
+<p>
+  <% if @equipment.link_url %>
+      <strong>Receipt:</strong>
+      <%= link_to 'View Document', @equipment.link_url %>
+  <% end %>
+  
+</p>
+
 <%= link_to 'Edit', edit_equipment_path(@equipment) %> |
 <%= link_to 'Back', equipment_index_path %>

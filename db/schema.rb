@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206051459) do
+ActiveRecord::Schema.define(version: 20161209213950) do
 
   create_table "equipment", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161206051459) do
     t.datetime "created_at",                                               null: false
     t.datetime "updated_at",                                               null: false
     t.decimal  "amount",          precision: 10, scale: 2, default: "0.0", null: false
+    t.string   "link_url"
   end
 
 end
