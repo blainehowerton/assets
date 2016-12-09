@@ -1,42 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Equipment</h1>
+<br>
+<div class="jumbotron">
+  <h1>Equipment</h1>
+  <p>The Equipment Manager lists and manages physical assets.</p>
 
-<% sum = 0 %>
-<% @equipment.each do |equipment| %>
-  <% sum = sum + equipment.amount %>
-<% end %>
+  <% sum = 0 %>
+  <% @equipment.each do |equipment| %>
+    <% sum = sum + equipment.amount %>
+  <% end %>
 
-<h4>Total Gross Value of Equipment: <%= number_to_currency(sum) %> </h4>
+  <h5>Total Gross Value of Equipment: <%= number_to_currency(sum) %> </h5>
+</div> 
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>In service date</th>
-      <th>Serial</th>
-      <th>Amount</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @equipment.each do |equipment| %>
-      <tr>
-        <td><%= equipment.name %></td>
-        <td><%= equipment.description %></td>
-        <td><%= equipment.in_service_date %></td>
-        <td><%= equipment.serial %></td>
-        <td><%= number_to_currency(equipment.amount) %></td>
-        <td><%= link_to 'Show', equipment %></td>
-        <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
-        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Actions</h3>
+  </div>
+  <div class="panel-body">
+    <a class="btn btn-primary btn-lg btn-block" href="/equipment/new" role="button">New Item</a>
+  </div>
+</div>
 
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Items</h3>
+  </div>
+  <div class="panel-body">
+      <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>In service date</th>
+            <th>Serial</th>
+            <th>Amount</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @equipment.each do |equipment| %>
+            <tr>
+              <td><%= equipment.name %></td>
+              <td><%= equipment.description %></td>
+              <td><%= equipment.in_service_date %></td>
+              <td><%= equipment.serial %></td>
+              <td><%= number_to_currency(equipment.amount) %></td>
+              <td><%= link_to 'Show', equipment %></td>
+              <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
+              <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    </div>
+</div>
 <br>
 
 <%= link_to 'Home', '/' %>  |
