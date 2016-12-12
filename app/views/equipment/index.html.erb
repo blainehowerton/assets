@@ -34,6 +34,8 @@
       <table class="table table-striped">
         <thead>
           <tr>
+            <th>Show</th>
+            <th>Edit</th>
             <th>Name</th>
             <th>In service date</th>
             <th>Serial</th>
@@ -45,12 +47,18 @@
         <tbody>
           <% @equipment.each do |equipment| %>
             <tr>
+              <td>
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                <%= link_to '', equipment, :id => "button_id", :class => "glyphicon glyphicon-info-sign" %>
+              </td>
+              <td>
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                <%= link_to '', edit_equipment_path(equipment), :id => "button_id", :class => "glyphicon glyphicon-pencil" %>
+              </td>
               <td><%= equipment.name %></td>
               <td><%= equipment.in_service_date %></td>
               <td><%= equipment.serial %></td>
               <td><%= number_to_currency(equipment.amount) %></td>
-              <td><%= link_to 'Show', equipment %></td>
-              <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
               <td><%= button_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
