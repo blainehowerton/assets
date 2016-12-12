@@ -59,7 +59,7 @@
               <td><%= customer.email %></td>
               <td><%= number_to_phone(customer.office_phone, area_code: true, extension: customer.office_extension) %></td>
               <td><%= number_to_phone(customer.cell_phone, area_code: true) %></td>
-              <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= button_to 'Destroy', customer, method: :delete %></td>
             </tr>
           <% end %>
         </tbody>
