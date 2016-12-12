@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20161210170857) do
   create_table "customers", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "company_name"
     t.string   "address1"
     t.string   "address2"
     t.string   "city"

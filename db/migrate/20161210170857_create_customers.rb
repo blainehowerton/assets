@@ -3,6 +3,7 @@ class CreateCustomers < ActiveRecord::Migration[5.0]
     create_table :customers do |t|
       t.string :first_name
       t.string :last_name
+      t.string :company_name
       t.string :address1
       t.string :address2
       t.string :city
