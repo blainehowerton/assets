@@ -26,7 +26,9 @@
 </p>
 
 <p>
-  <% if @equipment.link_url %>
+  <% if @equipment.link_url == "enter link" %>
+      <strong>Receipt:  Not entered</strong>
+      <% else %>
       <strong>Receipt:</strong>
       <%= link_to 'View Document', @equipment.link_url %>
   <% end %>
