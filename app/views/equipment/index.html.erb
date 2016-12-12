@@ -39,6 +39,7 @@
             <th>Name</th>
             <th>In service date</th>
             <th>Serial</th>
+            <th>Receipt</th>
             <th>Amount</th>
             <th colspan="3"></th>
           </tr>
@@ -58,6 +59,7 @@
               <td><%= equipment.name %></td>
               <td><%= equipment.in_service_date %></td>
               <td><%= equipment.serial %></td>
+              <td><%= equipment.link_url %></td>
               <td><%= number_to_currency(equipment.amount) %></td>
               <td><%= button_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
