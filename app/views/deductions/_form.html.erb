@@ -1,4 +1,4 @@
-<%= form_for(deduction) do |f| %>
+<%= bootstrap_form_for(deduction) do |f| %>
   <% if deduction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(deduction.errors.count, "error") %> prohibited this deduction from being saved:</h2>
@@ -12,22 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :equipment_id %>
-    <%= f.number_field :equipment_id %>
+    <%= f.collection_select :equipment_id, Equipment.all, :id, :name %>
   </div>
 
   <div class="field">
-    <%= f.label :link_to_return %>
     <%= f.text_field :link_to_return %>
   </div>
 
   <div class="field">
-    <%= f.label :elected_cost %>
     <%= f.text_field :elected_cost %>
   </div>
 
   <div class="field">
-    <%= f.label :classification %>
     <%= f.text_field :classification %>
   </div>
 
