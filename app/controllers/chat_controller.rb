@@ -4,10 +4,4 @@ class ChatController < ApplicationController
 def index
 end
 
-def Sender
-end
-
-def show
-end
-
 end
