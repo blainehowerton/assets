@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219070131) do
+ActiveRecord::Schema.define(version: 20170307223046) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "first_name"
@@ -53,6 +53,46 @@ ActiveRecord::Schema.define(version: 20161219070131) do
     t.string   "link_url",                                 default: "enter link"
   end
 
+  create_table "estimates", force: :cascade do |t|
+    t.integer  "number"
+    t.text     "scope"
+    t.string   "item"
+    t.text     "description"
+    t.integer  "quantity"
+    t.integer  "cost"
+    t.integer  "item_total"
+    t.integer  "discount"
+    t.integer  "net"
+    t.integer  "total"
+    t.text     "message"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "cost"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "filename"
+    t.string   "submitter"
+    t.text     "description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -68,6 +108,10 @@ ActiveRecord::Schema.define(version: 20161219070131) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
