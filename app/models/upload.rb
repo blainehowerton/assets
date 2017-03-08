@@ -1,5 +1,5 @@
 class Upload < ApplicationRecord
-
+	
 has_attached_file :image,
                 storage: :s3,
               	s3_credentials: {access_key_id: ENV["AWS_KEY"], 

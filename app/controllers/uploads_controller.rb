@@ -4,7 +4,12 @@ class UploadsController < ApplicationController
   # GET /uploads
   # GET /uploads.json
   def index
-    @uploads = Upload.all
+    if current_user.admin?
+    @uploads = Upload.all.order('created_at DESC')
+      else
+      @uploads = Upload.where(:user_id => current_user.id).order('created_at DESC')
+    end
+
   end
 
   # GET /uploads/1
@@ -25,7 +30,7 @@ class UploadsController < ApplicationController
   # POST /uploads.json
   def create
     @upload = Upload.new(upload_params)
-
+    @upload.user_id = current_user.id
     respond_to do |format|
       if @upload.save
         format.html { redirect_to @upload, notice: 'Upload was successfully created.' }
@@ -73,6 +78,6 @@ class UploadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def upload_params
-      params.require(:upload).permit(:filename, :submitter, :description, :image)
+      params.require(:upload).permit(:filename, :submitter, :description, :image, :email, :user_id)
     end
 end
