@@ -1,7 +1,32 @@
-<h1>Welcome to the Upload Portal</h1>
+<p id="notice"><%= notice %></p>
 
-<p>Please enter the information below and choose your file.</p>
+<br>
+<div class="jumbotron">
+  <h1>Upload Your File</h1>
+  <p>Welcome to the Upload Portal.</p>
+
+
+
+
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">File Information</h3>
+  </div>
+  <div class="panel-body">
+
 
 <%= render 'form', upload: @upload %>
 
-<%= link_to 'Back', uploads_path %>
+
+      
+  </div>
+</div>
+<br>
+
+<%= link_to 'Home', '/' %>  |
+<%= link_to 'List Uploads', uploads_path %>
+
+<br><br>
+<h6>This is a service provided by <a href="http://digitalevents.solutions" target="_blank">http://digitalevents.solutions</a></h6>

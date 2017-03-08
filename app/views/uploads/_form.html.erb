@@ -1,4 +1,4 @@
-<%= form_for(upload) do |f| %>
+<%= bootstrap_form_for(upload) do |f| %>
   <% if upload.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(upload.errors.count, "error") %> prohibited this upload from being saved:</h2>
@@ -13,13 +13,11 @@
 
 
   <div class="field">
-    <%= f.label :submitter %>
-    <%= f.text_field :submitter %>
+    <%= f.text_field :submitter, label: "Enter your email address" %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, label: "Describe the file" %>
   </div>
 
 
