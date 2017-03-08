@@ -6,6 +6,6 @@ has_attached_file :image,
               	secret_access_key: ENV["AWS_SECRET"]},
               	bucket: "yghdassets"
 
-validates_attachment_content_type :image, content_type: [/\Avideo\/.*\Z/, /\Aimage\/.*\Z/]
+validates_attachment_content_type :image, content_type: [/\Avideo\/.*\Z/, /\Aimage\/.*\Z/, /\Aapplication\/.*\Z/]
 
 end
