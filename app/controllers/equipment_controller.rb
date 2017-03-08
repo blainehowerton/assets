@@ -1,5 +1,8 @@
 class EquipmentController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
+  before_filter do 
+      redirect_to "/home/welcome" unless current_user && current_user.admin?
+    end
 
   # GET /equipment
   # GET /equipment.json

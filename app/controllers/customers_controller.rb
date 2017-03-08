@@ -1,6 +1,8 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
-
+  before_filter do 
+      redirect_to "/home/welcome" unless current_user && current_user.admin?
+  end
   # GET /customers
   # GET /customers.json
   def index

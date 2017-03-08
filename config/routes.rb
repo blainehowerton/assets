@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get '/home/welcome', to: 'home#welcome'
+
   resources :uploads
   resources :deductions
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
