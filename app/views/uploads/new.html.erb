@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <br>
 <div class="jumbotron">
-  <h1>Upload Your File</h1>
-  <p>Welcome to the Upload Portal.</p>
+  <h1>Send Us Your File</h1>
+  <p>Welcome to <%= current_user.name %>'s upload portal.</p>
+	<p id="notice"><%= notice %></p>
 
 
 
@@ -19,6 +18,9 @@
 
 <%= render 'form', upload: @upload %>
 
+<p>Please be patient while your file uploads.  Do not refresh or reload your browser while your file is uploading.  When your upload is successful, you will be redirected to a Thank You screen.</p>
+
+<p>Problems?  Contact us at 720.255.1640 xt 101, or <a href="mailto:bhowerton@yghdtv.com?Subject=Hello,%20Upload%20Issues">[send an email to bhowerton@yghdtv.com]</a></p>
 
       
   </div>
