@@ -1,7 +1,5 @@
 class DeductionsController < ApplicationController
   before_action :set_deduction, only: [:show, :edit, :update, :destroy]
-  before_filter do 
-      redirect_to "/home/welcome" unless current_user && current_user.admin?
 
   # GET /deductions
   # GET /deductions.json
