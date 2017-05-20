@@ -136,7 +136,6 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-    pg (0.19.0)
     puma (3.6.2)
     rack (2.0.1)
     rack-pjax (1.0.0)
@@ -247,7 +246,6 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   paperclip (~> 4.3, >= 4.3.6)
-  pg
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rails_admin (~> 1.0)
@@ -262,4 +260,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.6
+   1.15.0
