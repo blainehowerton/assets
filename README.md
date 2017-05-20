@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version:
 2.2.4p230
 
 * System dependencies
@@ -15,6 +15,7 @@ Things you may want to cover:
 * Database creation
 
 * Database initialization
+Do a rake db:seed on the latest version.  User is test@test.com, pass is password
 
 * How to run the test suite
 
