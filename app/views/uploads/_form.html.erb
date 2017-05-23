@@ -1,30 +1,18 @@
-<%= bootstrap_form_for(upload) do |f| %>
-  <% if upload.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(upload.errors.count, "error") %> prohibited this upload from being saved:</h2>
+<%= form_for @upload do |f| %>
+   
 
-      <ul>
-      <% upload.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <%= s3_uploader_form callback_url: '', callback_param: "uploads[image_url]", id: "s3-uploader" do %>
-  <%= file_field_tag :file, multiple: true, data: { url: '' } %>
-<% end %>
-
-<script id="template-upload" type="text/x-tmpl">
-<div id="file-{%=o.unique_id%}" class="upload">
-  {%=o.name%}
-  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+<div class="field">
+     <%= f.text_field :email, label: "Enter your email address" %>
 </div>
-</script>
+     <%= f.text_field :submitter, label: "Enter your name" %>
+<div class="field">
+     <%= f.text_area :description, label: "Describe the file" %>
+</div>
 
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+     <%= f.submit %>
+    </div>
+
 <% end %>
+
+   
