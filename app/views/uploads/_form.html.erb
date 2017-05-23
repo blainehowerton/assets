@@ -12,23 +12,16 @@
   <% end %>
 
 
-  <div class="field">
-    <%= f.text_field :email, label: "Enter your email address" %>
-  </div>
+  <%= s3_uploader_form callback_url: '', callback_param: "uploads[image_url]", id: "s3-uploader" do %>
+  <%= file_field_tag :file, multiple: true, data: { url: '' } %>
+<% end %>
 
-  <div class="field">
-    <%= f.text_field :submitter, label: "Enter your name" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_area :description, label: "Describe the file" %>
-  </div>
-
-
-<div class="field">
-    <%= f.file_field :image, :required => true %>
-  </p>
-  </div>
+<script id="template-upload" type="text/x-tmpl">
+<div id="file-{%=o.unique_id%}" class="upload">
+  {%=o.name%}
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
 
   
   <div class="actions">

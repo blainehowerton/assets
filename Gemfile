@@ -10,6 +10,7 @@ gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'aws-sdk-rails'
 gem 'rails_admin', '~> 1.0'
+gem 's3_direct_upload'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
