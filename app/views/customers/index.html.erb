@@ -1,35 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<br>
+
+<!--Begin header -->
 <div class="jumbotron">
   <h1>Customers</h1>
   <p>The Customer Manager lists and manages all customers.</p>
-</div> 
+</div>
+<!--end header -->
 
-
+<!--begin buttons -->
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Actions</h3>
   </div>
-  <div class="panel-body">
 
-<a class="btn btn-primary btn-lg btn-block" href="/customers/new" role="button">New Item</a>
-  
+  <div class="panel-body">
+  <a class="btn btn-primary btn-lg btn-block" href="/customers/new" role="button">New Customer</a>
+
   </div>
 </div>
+<!--end buttons -->
 
-
+<!--begin table -->
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Items</h3>
+    <h3 class="panel-title">Customers</h3>
   </div>
+
   <div class="panel-body">
-      <div class="table-responsive">
+
+
       <table class="table table-striped">
-
-
-
         <thead>
           <tr>
             <th>Show</th>
@@ -71,13 +73,8 @@
       </div>
       </div>
 
-      
-  </div>
 
 <br>
 
 <%= link_to 'Home', '/' %>  |
-<%= link_to 'New Item', new_customer_path %>
-
-
-
+<%= link_to 'New Customer', new_customer_path %>
