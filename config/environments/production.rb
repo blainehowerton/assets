@@ -19,16 +19,16 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
-  config.pubmanager.js_compressor = :uglifier
-  # config.pubmanager.css_compressor = :sass
+  config.assets.js_compressor = :uglifier
+  # config.assets.css_compressor = :sass
 
-  # Do not fallback to pubmanager pipeline if a precompiled asset is missed.
-  config.pubmanager.compile = false
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  config.assets.compile = false
 
-  # `config.pubmanager.precompile` and `config.pubmanager.version` have moved to config/initializers/pubmanager.rb
+  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = 'http://pubmanager.example.com'
+  # config.action_controller.asset_host = 'http://assets.example.com'
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -54,7 +54,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "pubmanager_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "assets_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

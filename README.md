@@ -24,4 +24,4 @@ Do a rake db:seed on the latest version.  User is test@test.com, pass is passwor
 * Deployment instructions
 
 * ...
-# pubmanager
+# assets
